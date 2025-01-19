@@ -1,0 +1,9 @@
+product-property: Customer Profile Prod
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3307/customerdb
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    generate-ddl: true

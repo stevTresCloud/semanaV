@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: config-server-2
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/stevTresCloud/-service-configuration-2
+          clone-on-start: true
+          default-label: master
+          username: stevTresCloud
+          password: ${GITHUB_TOKEN}
+
+server:
+  port: 8889
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    instance-id: ${spring.application.name}:${random.value}
